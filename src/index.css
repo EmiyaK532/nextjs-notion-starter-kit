@@ -1,0 +1,160 @@
+@import './styles/fonts.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 移除冲突的全局字体设置 */
+/* * {
+    font-family: sans-serif;
+} */
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 47.4% 11.2%;
+
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 47.4% 11.2%;
+
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 47.4% 11.2%;
+
+        --primary: 222.2 47.4% 11.2%;
+        --primary-foreground: 210 40% 98%;
+
+        --secondary: 210 40% 96.1%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
+
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+
+        --destructive: 0 100% 50%;
+        --destructive-foreground: 210 40% 98%;
+
+        --ring: 215 20.2% 65.1%;
+
+        --radius: 0.5rem;
+
+        /* 自定义颜色变量，用于主题切换 */
+        --color-primary: #ffffff;
+        --color-secondary: #f5f5f5;
+        --color-accent: #3b82f6;
+        --color-background: #ffffff;
+        --color-foreground: #0f0f0f;
+        --color-muted: #f5f5f5;
+        --color-mutedForeground: #6b7280;
+        --color-border: #e5e7eb;
+        --color-card: #ffffff;
+        --color-cardForeground: #0f0f0f;
+    }
+
+    .dark {
+        --background: 224 71% 4%;
+        --foreground: 213 31% 91%;
+
+        --muted: 223 47% 11%;
+        --muted-foreground: 215.4 16.3% 56.9%;
+
+        --accent: 216 34% 17%;
+        --accent-foreground: 210 40% 98%;
+
+        --popover: 224 71% 4%;
+        --popover-foreground: 215 20.2% 65.1%;
+
+        --border: 216 34% 17%;
+        --input: 216 34% 17%;
+
+        --card: 224 71% 4%;
+        --card-foreground: 213 31% 91%;
+
+        --primary: 210 40% 98%;
+        --primary-foreground: 222.2 47.4% 1.2%;
+
+        --secondary: 222.2 47.4% 11.2%;
+        --secondary-foreground: 210 40% 98%;
+
+        --destructive: 0 63% 31%;
+        --destructive-foreground: 210 40% 98%;
+
+        --ring: 216 34% 17%;
+
+        --radius: 0.5rem;
+
+        /* 暗色主题的自定义颜色变量 */
+        --color-primary: #0f0f0f;
+        --color-secondary: #1f1f1f;
+        --color-accent: #3b82f6;
+        --color-background: #0f0f0f;
+        --color-foreground: #f5f5f5;
+        --color-muted: #1f1f1f;
+        --color-mutedForeground: #a3a3a3;
+        --color-border: #2a2a2a;
+        --color-card: #1a1a1a;
+        --color-cardForeground: #f0f0f0;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+        /* 设置全局默认字体为衬线字体 */
+        font-family: var(--font-serif);
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings:
+            'rlig' 1,
+            'calt' 1;
+    }
+
+    /* 应用自定义字体变量 */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-sans);
+    }
+
+    /* 让所有正文内容使用衬线字体 */
+    body,
+    p,
+    li,
+    div {
+        font-family: var(--font-serif);
+    }
+
+    /* 特定内容区域保持衬线字体 */
+    .prose p,
+    .prose li,
+    article p,
+    .article-content {
+        font-family: var(--font-serif);
+    }
+
+    /* 特殊元素使用无衬线字体 */
+    .navbar,
+    .nav,
+    .sidebar,
+    .footer,
+    .menu,
+    .btn,
+    button {
+        font-family: var(--font-sans);
+    }
+
+    /* 代码块使用等宽字体 */
+    code,
+    pre,
+    .code {
+        font-family: var(--font-mono);
+    }
+}

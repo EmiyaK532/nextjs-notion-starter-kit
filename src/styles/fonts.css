@@ -1,0 +1,60 @@
+/* 
+ * fonts.css - 多语言字体支持
+ * 使用系统字体，避免加载问题
+ */
+
+@font-face {
+    font-family: EmerlandRegular;
+    src: url('/fonts/test/Emerland.ttf');
+}
+
+/* 应用字体全局设置 */
+:root {
+    /* 无衬线字体系列 - 用于标题、导航和UI元素 */
+    --font-sans:
+        -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei',
+        'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans SC',
+        'Noto Sans CJK SC', 'WenQuanYi Micro Hei', sans-serif;
+
+    /* 衬线字体系列 - 用于正文内容 */
+    --font-serif:
+        Georgia, Cambria, 'Times New Roman', 'SimSun', 'Songti SC',
+        'Source Han Serif SC', 'Noto Serif CJK SC', serif;
+
+    /* 等宽字体 - 用于代码 */
+    --font-mono:
+        SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+        'Courier New', monospace;
+}
+
+/* 标题、导航等使用无衬线字体 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar,
+.nav,
+.sidebar,
+.footer,
+.menu,
+.btn,
+button {
+    font-family: var(--font-sans);
+}
+
+/* 正文内容使用衬线字体，提升长文阅读体验 */
+.article-content,
+article p,
+.blog-content,
+.post-content {
+    font-family: var(--font-serif);
+}
+
+/* 代码块使用等宽字体 */
+code,
+pre,
+.code {
+    font-family: var(--font-mono);
+}
